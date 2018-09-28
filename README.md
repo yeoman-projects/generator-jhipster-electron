@@ -4,6 +4,7 @@
 </a>&nbsp;<img src="https://img.shields.io/github/license/amanganiello90/generator-jhipster-electron.svg">&nbsp;<img src="https://img.shields.io/github/downloads/amanganiello90/generator-jhipster-electron/total.svg">&nbsp;
 
 |Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC)  |
+|:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 > A jhipster module to run spring boot app in electron package
 
