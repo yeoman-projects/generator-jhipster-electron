@@ -5,6 +5,10 @@ const fse = require('fs-extra');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
+// const dir = 'electron-war-package/';
+const filesGenerated = ['electron.app.config.json', 'icon.png', 'index.html', 'main.js', 'package.json'];
+const messageTest = 'generation electron package folder with files';
+
 describe('JHipster generator electron', () => {
     describe('Test with Maven and AngularX', () => {
         beforeEach((done) => {
@@ -22,11 +26,8 @@ describe('JHipster generator electron', () => {
                 .on('end', done);
         });
 
-        it('generate dummy.txt file', () => {
-            assert.file([
-                'dummy-maven.txt',
-                'dummy-angularX.txt',
-            ]);
+        it(messageTest, () => {
+            assert.file(filesGenerated);
         });
     });
 
@@ -46,11 +47,8 @@ describe('JHipster generator electron', () => {
                 .on('end', done);
         });
 
-        it('generate dummy.txt file', () => {
-            assert.file([
-                'dummy-gradle.txt',
-                'dummy-angular1.txt',
-            ]);
+        it(messageTest, () => {
+            assert.file(filesGenerated);
         });
     });
 });

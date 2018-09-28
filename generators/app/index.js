@@ -3,6 +3,11 @@ const packagejs = require('../../package.json');
 const semver = require('semver');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
+const fs = require('fs');
+const path = require('path');
+
+let directory = '';
+const dir = 'electron-war-package';
 
 module.exports = class extends BaseGenerator {
     get initializing() {
@@ -104,18 +109,34 @@ module.exports = class extends BaseGenerator {
         this.log(`\nmessage=${this.message}`);
         this.log('------\n');
 
-        if (this.clientFramework === 'angular1') {
-            this.template('dummy.txt', 'dummy-angular1.txt');
+        if (!fs.existsSync(dir)) {
+            directory = path.join(process.cwd(), dir);
+            fs.mkdirSync(directory);
+        } else {
+            throw new Error(`the folder: ${dir} already exists. Please delete before it!`);
         }
-        if (this.clientFramework === 'angularX' || this.clientFramework === 'angular2') {
-            this.template('dummy.txt', 'dummy-angularX.txt');
-        }
+        process.chdir(path.join(process.cwd(), dir));
+        this.template('electron.app.config.json', 'electron.app.config.json');
+        this.template('icon.png', 'icon.png');
+        this.template('index.html', 'index.html');
+        this.template('main.js', 'main.js');
+        this.template('package.json', 'package.json');
+
+        /* if (this.clientFramework === 'angular1') {
+
+         }
+         if (this.clientFramework === 'angularX' || this.clientFramework === 'angular2') {
+
+         }
+
+
         if (this.buildTool === 'maven') {
-            this.template('dummy.txt', 'dummy-maven.txt');
+
         }
         if (this.buildTool === 'gradle') {
-            this.template('dummy.txt', 'dummy-gradle.txt');
+
         }
+        */
     }
 
     install() {
