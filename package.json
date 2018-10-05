@@ -5,7 +5,8 @@
   "keywords": [
     "yeoman-generator",
     "jhipster-module",
-    "jhipster-5"
+    "jhipster-5",
+    "electron"
   ],
   "homepage": "https://github.com/amanganiello90/generator-jhipster-electron",
   "author": {
