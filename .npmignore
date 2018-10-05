@@ -1,0 +1,10 @@
+.sonarlint
+.vscode
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitattributes
+.gitignore
+.travis.yml
+test/
+CONTRIBUTING.md

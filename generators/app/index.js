@@ -176,5 +176,6 @@ module.exports = class extends BaseGenerator {
         this.log(`\nEnd of generation in ${chalk.yellow.bold(`${dir}`)} folder, you can view the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold('README.md')} :`);
         this.log(`1. To run the app in a live electron process, run: ${chalk.yellow.bold(`${this.clientPackageManager} start`)}`);
         this.log(`2. To package your app in an electron exe, run: ${chalk.yellow.bold(`${this.clientPackageManager} run package`)}`);
+        this.log(`For both, when you open the electron window, you can view the backend log typing ${chalk.yellow.bold('F1 keyword')}`);
     }
 };
