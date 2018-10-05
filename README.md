@@ -11,7 +11,7 @@
 
 # Introduction
 
-This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **war package**.
+This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **target/*.war package**.
 
 # Prerequisites
 
@@ -70,7 +70,7 @@ It will be created a folder named **electron-war-package**. After installing dep
 * `npm start` : it runs the app in a live electron process
 * `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package\distribution**
 
-For both, you can read the backend log into the electron windows using **F1 keyword**:
+For both, you can read the backend log into the electron window using **F1 keyword**:
 
 ![Electron-Log](electron-log.png)
 
