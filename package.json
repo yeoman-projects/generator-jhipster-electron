@@ -1,7 +1,7 @@
 {
   "name": "generator-jhipster-electron",
   "version": "1.1.0-SNAPSHOT",
-  "description": "A jhipster module to run spring boot app in electron package",
+  "description": "A jhipster module to run spring boot war app in electron package",
   "keywords": [
     "yeoman-generator",
     "jhipster-module",

@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/github/stars/amanganiello90/generator-jhipster-electron.svg">&nbsp;<a href="https://github.com/amanganiello90/generator-jhipster-electron/issues"><img src="https://img.shields.io/github/issues/amanganiello90/generator-jhipster-electron.svg">
 </a>&nbsp;<img src="https://img.shields.io/github/license/amanganiello90/generator-jhipster-electron.svg">&nbsp;<img src="https://img.shields.io/github/downloads/amanganiello90/generator-jhipster-electron/total.svg">&nbsp;
 
-> A jhipster module to run spring boot app in electron package
+> A jhipster module to run spring boot war app in electron package
 
 |Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC)  |
 |:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|

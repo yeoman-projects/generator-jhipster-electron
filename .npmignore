@@ -7,4 +7,5 @@
 .gitignore
 .travis.yml
 test/
+electron-log.png
 CONTRIBUTING.md
