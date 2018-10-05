@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/github/stars/amanganiello90/generator-jhipster-electron.svg">&nbsp;<a href="https://github.com/amanganiello90/generator-jhipster-electron/issues"><img src="https://img.shields.io/github/issues/amanganiello90/generator-jhipster-electron.svg">
 </a>&nbsp;<img src="https://img.shields.io/github/license/amanganiello90/generator-jhipster-electron.svg">&nbsp;<img src="https://img.shields.io/github/downloads/amanganiello90/generator-jhipster-electron/total.svg">&nbsp;
 
-> A jhipster module to run spring boot war app in electron package
+> A jhipster module to run spring boot war app in electron package. It is the jhipster module version of the yeoman [generator-electron-war-package](https://github.com/fullStackApp/generator-electron-war-package)
 
 |Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC)  |
 |:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -68,7 +68,7 @@ yo jhipster-electron
 It will be created a folder named **electron-war-package**. After installing dependencies and generating **target/*.war** with spring-boot, you can run in this:
 
 * `npm start` : it runs the app in a live electron process
-* `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package\distribution**
+* `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package/distribution**
 
 For both, you can read the backend log into the electron window using **F1 keyword**:
 
