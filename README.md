@@ -65,7 +65,7 @@ In a directory alongside your JHipster app, run this module. This will create an
 yo jhipster-electron
 ```
 
-It will be created a folder named **electron-war-package**. After installing dependencies you can run in this:
+It will be created a folder named **electron-war-package**. After installing dependencies and generating **target/*.war** with spring-boot, you can run in this:
 
 * `npm start` : it runs the app in a live electron process
 * `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package\distribution**
