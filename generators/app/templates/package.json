@@ -9,14 +9,14 @@
 	},
 	"license": "Apache-2.0",
 	"scripts": {
-		"delete": "del \"app.war\"",
-		"copy": "cpx  \"../target/app.war\"  . ",
-		"preconfig": "npm run copy && npm run delete && npm run copy  ",
+		"delete": "del \"*.war\"",
+		"copy": "cpx  \"../target/*.war\"  .",
+		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.war app.war ",
 		"start": "npm run preconfig && electron .",
 		"package": "npm run preconfig && build"
 	},
 	"build": {
-		"productName": "electron-jar",
+		"productName": "electron-war",
 		"asar": false,
 		"directories": {
 			"output": "distribution"
@@ -44,7 +44,8 @@
 		"cpx": "1.5.0",
 		"del-cli": "1.1.0",
 		"electron": "1.8.2",
-		"electron-builder": "20.15.1"
+		"electron-builder": "20.15.1",
+		"rename-cli": "5.1.2"
 	},
 	"dependencies": {
 		"jquery": "3.3.1",

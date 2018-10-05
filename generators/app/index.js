@@ -2,7 +2,7 @@ const chalk = require('chalk');
 const packagejs = require('../../package.json');
 const semver = require('semver');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
-const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
+// const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 const fs = require('fs');
 const path = require('path');
 
@@ -41,7 +41,7 @@ module.exports = class extends BaseGenerator {
         };
     }
 
-    prompting() {
+    /* prompting() {
         const prompts = [
             {
                 type: 'input',
@@ -59,6 +59,7 @@ module.exports = class extends BaseGenerator {
             done();
         });
     }
+    */
 
     writing() {
         // function to use directly template
@@ -82,15 +83,16 @@ module.exports = class extends BaseGenerator {
         this.angularAppName = this.getAngularAppName();
 
         // use constants from generator-constants.js
-        const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`;
+        /*  const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`;
         const resourceDir = jhipsterConstants.SERVER_MAIN_RES_DIR;
         const webappDir = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
+        */
 
         // variable from questions
-        this.message = this.props.message;
+        // this.message = this.props.message;
 
         // show all variables
-        this.log('\n--- some config read from config ---');
+        /*   this.log('\n--- some config read from config ---');
         this.log(`baseName=${this.baseName}`);
         this.log(`packageName=${this.packageName}`);
         this.log(`clientFramework=${this.clientFramework}`);
@@ -107,8 +109,9 @@ module.exports = class extends BaseGenerator {
 
         this.log('\n--- variables from questions ---');
         this.log(`\nmessage=${this.message}`);
-        this.log('------\n');
+        this.log('------\n'); */
 
+        this.log(`Generating folder '${dir}'`);
         if (!fs.existsSync(dir)) {
             directory = path.join(process.cwd(), dir);
             fs.mkdirSync(directory);
@@ -116,11 +119,12 @@ module.exports = class extends BaseGenerator {
             throw new Error(`the folder: ${dir} already exists. Please delete before it!`);
         }
         process.chdir(path.join(process.cwd(), dir));
-        this.template('electron.app.config.json', 'electron.app.config.json');
-        this.template('icon.png', 'icon.png');
-        this.template('index.html', 'index.html');
-        this.template('main.js', 'main.js');
-        this.template('package.json', 'package.json');
+        this.template('electron.app.config.json', `${directory}/electron.app.config.json`);
+        this.template('icon.png', `${directory}/icon.png`);
+        this.template('index.html', `${directory}/index.html`);
+        this.template('main.js', `${directory}/main.js`);
+        this.template('package.json', `${directory}/package.json`);
+        this.template('README.md', `${directory}/README.md`);
 
         /* if (this.clientFramework === 'angular1') {
 
@@ -169,6 +173,8 @@ module.exports = class extends BaseGenerator {
     }
 
     end() {
-        this.log('End of electron generator');
+        this.log(`\nEnd of generation in ${chalk.yellow.bold(`${dir}`)} folder, you can view the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold('README.md')} :`);
+        this.log(`1. To run the app in a live electron process, run: ${chalk.yellow.bold(`${this.clientPackageManager} start`)}`);
+        this.log(`2. To package your app in an electron exe, run: ${chalk.yellow.bold(`${this.clientPackageManager} run package`)}`);
     }
 };

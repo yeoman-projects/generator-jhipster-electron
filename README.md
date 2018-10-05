@@ -65,6 +65,13 @@ In a directory alongside your JHipster app, run this module. This will create an
 yo jhipster-electron
 ```
 
+It will be created a folder named **electron-war-package**. After installing dependencies you can run in this:
+
+* `npm start` : it runs the app in a live electron process
+* `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package\distribution**
+
+> The default port used in spring boot, called from the electron app, is **8081**. You can change it in the **electron.app.config.json**
+
 # Contributing
 
 Please read our [guidelines](/CONTRIBUTING.md#submitting-an-issue) before submitting an issue. For feature requests, bugs and queries you can use [this template][feature-template].
