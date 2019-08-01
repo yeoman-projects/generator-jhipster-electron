@@ -59,7 +59,7 @@ npm update -g generator-jhipster-electron
 
 Create a JHipster app using `yo jhipster`, or a backend-only with `yo jhipster:server`. 
 
-In a directory alongside your JHipster app, run this module. This will create an electron-app folder that packages your war in exe.
+In the base directory of your JHipster app, run this module. This will create an electron-app folder that packages your war in exe.
 
 ```bash
 yo jhipster-electron
