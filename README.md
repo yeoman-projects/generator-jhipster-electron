@@ -22,6 +22,12 @@ This is a [JHipster](http://jhipster.github.io/) module, that is meant to be use
 >
 > For the features of the last release refers to [CHANGELOG.md](https://github.com/amanganiello90/generator-jhipster-electron/blob/master/CHANGELOG.md).
 
+# Latest release news
+
+## [1.1.0] Release - 04-02-2020
+
+- Upgrade for jhipster 6.x to use jar instead of war
+
 # Prerequisites
 
 As this is a [JHipster](http://www.jhipster.tech/) module, we expect you to have an existing JHipster app with its prerequisites.
