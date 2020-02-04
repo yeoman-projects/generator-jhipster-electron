@@ -1,7 +1,7 @@
 {
-	"name": "war-exe-generator",
-	"description": "Spawning Jhipster war app in Electron and using it to serve content or create a standalone package",
-	"version": "1.0.0",
+	"name": "jar-exe-generator",
+	"description": "Spawning Jhipster jar app in Electron and using it to serve content or create a standalone package",
+	"version": "1.1.0",
 	"main": "main.js",
 	"author": {
 		"name": "Angelo Manganiello",
@@ -9,32 +9,29 @@
 	},
 	"license": "Apache-2.0",
 	"scripts": {
-		"delete": "del \"*.war\"",
-		"copy": "cpx  \"../target/*.war\"  .",
-		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.war app.war ",
+		"delete": "del \"*.jar\"",
+		"copy": "cpx  \"../target/*.jar\"  .",
+		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.jar app.jar ",
 		"start": "npm run preconfig && electron .",
-		"package": "npm run preconfig && build"
+		"package": "npm run preconfig && electron-builder"
 	},
 	"build": {
-		"productName": "electron-war",
+		"productName": "electron-jar",
 		"asar": false,
 		"directories": {
 			"output": "distribution"
 		},
 		"win": {
-			"icon": "icon.png",
 			"target": [
 				"portable"
 			]
 		},
 		"mac": {
-			"icon": "icon.png",
 			"target": [
 				"dmg"
 			]
 		},
 		"linux": {
-			"icon": "icon.png",
 			"target": [
 				"AppImage"
 			]
@@ -43,14 +40,14 @@
 	"devDependencies": {
 		"cpx": "1.5.0",
 		"del-cli": "1.1.0",
-		"electron": "1.8.2",
-		"electron-builder": "20.15.1",
+		"electron": "8.0.0",
+		"electron-builder": "22.3.2",
 		"rename-cli": "5.1.2"
 	},
 	"dependencies": {
-		"jquery": "3.3.1",
+		"jquery": "3.4.1",
 		"keymaster": "1.6.2",
-		"lodash": "4.17.4",
-		"request": "2.83.0"
+		"lodash": "4.17.15",
+		"request": "2.88.0"
 	}
 }

@@ -1,4 +1,4 @@
-> A jhipster module to run spring boot app (**target/war**) in electron package generated with [generator-jhipster-electron](https://github.com/amanganiello90/generator-jhipster-electron)
+> A jhipster module to run spring boot app (**target/jar**) in electron package generated with [generator-jhipster-electron](https://github.com/amanganiello90/generator-jhipster-electron)
 
 # Installation
 
@@ -17,10 +17,10 @@ npm install
 
 # usage
 
-After installing dependencies you can run in this:
+After installing dependencies and generating **target/*.jar** with spring-boot, you can run in this:
 
 * `npm start` : it runs the app in a live electron process
-* `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package\distribution**
+* `npm package` : it creates an **electron-jar 1.0.0.exe** app in **electron-jar-package/distribution**
 
 For both, you can read the backend log into the electron window using **F1 keyword**.
 
