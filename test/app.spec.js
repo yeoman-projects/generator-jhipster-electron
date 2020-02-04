@@ -34,7 +34,7 @@ describe('JHipster generator electron', () => {
             helpers
                 .run(path.join(__dirname, '../generators/app'))
                 .inTmpDir(dir => {
-                    fse.copySync(path.join(__dirname, '../test/templates/gradle-angular1'), dir);
+                    fse.copySync(path.join(__dirname, '../test/templates/gradle-react'), dir);
                 })
                 .withOptions({
                     testmode: true
