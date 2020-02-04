@@ -1,5 +1,3 @@
-/* global describe, beforeEach, it */
-
 const path = require('path');
 const fse = require('fs-extra');
 const assert = require('yeoman-assert');
@@ -11,10 +9,10 @@ const messageTest = 'generation electron package folder with files';
 
 describe('JHipster generator electron', () => {
     describe('Test with Maven and AngularX', () => {
-        beforeEach((done) => {
+        beforeEach(done => {
             helpers
                 .run(path.join(__dirname, '../generators/app'))
-                .inTmpDir((dir) => {
+                .inTmpDir(dir => {
                     fse.copySync(path.join(__dirname, '../test/templates/maven-angularX'), dir);
                 })
                 .withOptions({
@@ -32,10 +30,10 @@ describe('JHipster generator electron', () => {
     });
 
     describe('Test with Gradle and Angular1', () => {
-        beforeEach((done) => {
+        beforeEach(done => {
             helpers
                 .run(path.join(__dirname, '../generators/app'))
-                .inTmpDir((dir) => {
+                .inTmpDir(dir => {
                     fse.copySync(path.join(__dirname, '../test/templates/gradle-angular1'), dir);
                 })
                 .withOptions({

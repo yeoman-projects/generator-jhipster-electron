@@ -8,4 +8,4 @@
 
 ### Added
 
-- Module to package and run your jhipster **target/*.war** into an electron .exe file supporting backend log with **F1 keyword**  
+- Module to package and run your jhipster **target/\*.war** into an electron .exe file supporting backend log with **F1 keyword**

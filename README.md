@@ -1,5 +1,6 @@
-# generator-jhipster-electron 
-[![NPM version][npm-image]][npm-url] 
+# generator-jhipster-electron
+
+[![NPM version][npm-image]][npm-url]
 [![Build Status][github-actions-image]][github-actions-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Downloads][npmcharts-image]][npmcharts-url]
@@ -9,13 +10,13 @@
 
 > A jhipster module to run spring boot jar app in electron package. It is the jhipster module version of the yeoman [generator-electron-war-package](https://github.com/fullStackApp/generator-electron-war-package)
 
-|Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC)  |
-|:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC) |
+| :-------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
 
 
 # Introduction
 
-This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **target/*.jar package**.
+This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **target/\*.jar package**.
 
 > ## Notes
 >
@@ -65,7 +66,7 @@ npm update -g generator-jhipster-electron
 
 # Usage
 
-Create a JHipster app using `yo jhipster`, or a backend-only with `yo jhipster:server`. 
+Create a JHipster app using `yo jhipster`, or a backend-only with `yo jhipster:server`.
 
 In the base directory of your JHipster app, run this module. This will create an electron-app folder that packages your jar in exe.
 
@@ -73,15 +74,14 @@ In the base directory of your JHipster app, run this module. This will create an
 yo jhipster-electron
 ```
 
-It will be created a folder named **electron-jar-package**. After installing dependencies and generating **target/*.jar** with spring-boot, you can run in this:
+It will be created a folder named **electron-jar-package**. After installing dependencies and generating **target/\*.jar** with spring-boot, you can run in this:
 
-* `npm start` : it runs the app in a live electron process
-* `npm package` : it creates an **electron-jar 1.0.0.exe** app in **electron-jar-package/distribution**
+- `npm start` : it runs the app in a live electron process
+- `npm package` : it creates an **electron-jar 1.0.0.exe** app in **electron-jar-package/distribution**
 
 For both, you can read the backend log into the electron window using **F1 keyword**:
 
-![Electron-Log](electron-log.png)
-
+![Electron-Log](https://raw.githubusercontent.com/amanganiello90/generator-jhipster-electron/v1.1.0/electron-log.png)
 
 > The default port used in spring boot, called from the electron app, is **8081**. You can change it in the **electron.app.config.json**
 

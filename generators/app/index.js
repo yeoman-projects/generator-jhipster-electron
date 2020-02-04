@@ -1,10 +1,10 @@
 const chalk = require('chalk');
-const packagejs = require('../../package.json');
 const semver = require('semver');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 // const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 const fs = require('fs');
 const path = require('path');
+const packagejs = require('../../package.json');
 
 let directory = '';
 const dir = 'electron-jar-package';
@@ -20,7 +20,7 @@ module.exports = class extends BaseGenerator {
             readConfig() {
                 this.jhipsterAppConfig = this.getAllJhipsterConfig();
                 if (!this.jhipsterAppConfig) {
-                    this.error('Can\'t read .yo-rc.json');
+                    this.error('Cannot read .yo-rc.json');
                 }
             },
             displayLogo() {
@@ -29,13 +29,17 @@ module.exports = class extends BaseGenerator {
                 this.printJHipsterLogo();
 
                 // Have Yeoman greet the user.
-                this.log(`\nWelcome to the ${chalk.bold.yellow('JHipster electron')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`);
+                this.log(
+                    `\nWelcome to the ${chalk.bold.yellow('JHipster electron')} generator! ${chalk.yellow(`v${packagejs.version}\n`)}`
+                );
             },
             checkJhipster() {
                 const currentJhipsterVersion = this.jhipsterAppConfig.jhipsterVersion;
                 const minimumJhipsterVersion = packagejs.dependencies['generator-jhipster'];
                 if (!semver.satisfies(currentJhipsterVersion, minimumJhipsterVersion)) {
-                    this.warning(`\nYour generated project used an old JHipster version (${currentJhipsterVersion})... you need at least (${minimumJhipsterVersion})\n`);
+                    this.warning(
+                        `\nYour generated project used an old JHipster version (${currentJhipsterVersion})... you need at least (${minimumJhipsterVersion})\n`
+                    );
                 }
             }
         };
@@ -62,7 +66,6 @@ module.exports = class extends BaseGenerator {
     */
 
     writing() {
-
         // read config from .yo-rc.json
         /*
         this.baseName = this.jhipsterAppConfig.baseName;
@@ -119,7 +122,6 @@ module.exports = class extends BaseGenerator {
         this.template('main.js', `${directory}/main.js`);
         this.template('package.json', `${directory}/package.json`);
         this.template('README.md', `${directory}/README.md`);
-
     }
 
     install() {
@@ -145,7 +147,13 @@ module.exports = class extends BaseGenerator {
     }
 
     end() {
-        this.log(`\nEnd of generation in ${chalk.yellow.bold(`${dir}`)} folder, now you can use this module after generating the target/*.jar. View the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold('README.md')} :`);
+        this.log(
+            `\nEnd of generation in ${chalk.yellow.bold(
+                `${dir}`
+            )} folder, now you can use this module after generating the target/*.jar. View the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold(
+                'README.md'
+            )} :`
+        );
         this.log(`1. To run the app in a live electron process, run: ${chalk.yellow.bold(`${this.clientPackageManager} start`)}`);
         this.log(`2. To package your app in an electron exe, run: ${chalk.yellow.bold(`${this.clientPackageManager} run package`)}`);
         this.log(`For both, when you open the electron window, you can view the backend log typing ${chalk.yellow.bold('F1 keyword')}`);

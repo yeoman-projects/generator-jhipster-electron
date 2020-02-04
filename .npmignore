@@ -5,7 +5,7 @@
 .eslintrc.json
 .gitattributes
 .gitignore
-.travis.yml
+.github
 test/
 electron-log.png
 CONTRIBUTING.md
