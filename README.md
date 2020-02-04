@@ -1,9 +1,13 @@
-# generator-jhipster-electron [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-jhipster-electron 
+[![NPM version][npm-image]][npm-url] 
+[![Build Status][travis-image]][travis-url] 
+[![Build Status][github-actions-image]][github-actions-url]
+[![Dependency Status][daviddm-image]][daviddm-url]
 <img src="https://img.shields.io/github/forks/amanganiello90/generator-jhipster-electron.svg">&nbsp;
 <img src="https://img.shields.io/github/stars/amanganiello90/generator-jhipster-electron.svg">&nbsp;<a href="https://github.com/amanganiello90/generator-jhipster-electron/issues"><img src="https://img.shields.io/github/issues/amanganiello90/generator-jhipster-electron.svg">
 </a>&nbsp;<img src="https://img.shields.io/github/license/amanganiello90/generator-jhipster-electron.svg">&nbsp;<img src="https://img.shields.io/github/downloads/amanganiello90/generator-jhipster-electron/total.svg">&nbsp;
 
-> A jhipster module to run spring boot war app in electron package. It is the jhipster module version of the yeoman [generator-electron-war-package](https://github.com/fullStackApp/generator-electron-war-package)
+> A jhipster module to run spring boot jar app in electron package. It is the jhipster module version of the yeoman [generator-electron-war-package](https://github.com/fullStackApp/generator-electron-war-package)
 
 |Please donate whether you wish support us to give more time to app's growth | [![](https://www.paypal.com/en_US/IT/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XTC895QYD28TC)  |
 |:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -11,7 +15,11 @@
 
 # Introduction
 
-This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **target/*.war package**.
+This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application. You can use it to generate an electron exe that runs your **target/*.jar package**.
+
+> ## Notes
+>
+> For the features of the last release refers to [CHANGELOG.md](https://github.com/amanganiello90/generator-jhipster-electron/blob/master/CHANGELOG.md).
 
 # Prerequisites
 
@@ -59,16 +67,16 @@ npm update -g generator-jhipster-electron
 
 Create a JHipster app using `yo jhipster`, or a backend-only with `yo jhipster:server`. 
 
-In the base directory of your JHipster app, run this module. This will create an electron-app folder that packages your war in exe.
+In the base directory of your JHipster app, run this module. This will create an electron-app folder that packages your jar in exe.
 
 ```bash
 yo jhipster-electron
 ```
 
-It will be created a folder named **electron-war-package**. After installing dependencies and generating **target/*.war** with spring-boot, you can run in this:
+It will be created a folder named **electron-jar-package**. After installing dependencies and generating **target/*.jar** with spring-boot, you can run in this:
 
 * `npm start` : it runs the app in a live electron process
-* `npm package` : it creates an **electron-war 1.0.0.exe** app in **electron-war-package/distribution**
+* `npm package` : it creates an **electron-jar 1.0.0.exe** app in **electron-jar-package/distribution**
 
 For both, you can read the backend log into the electron window using **F1 keyword**:
 
@@ -85,7 +93,9 @@ Please read our [guidelines](/CONTRIBUTING.md#submitting-an-issue) before submit
 
 Apache-2.0 © [amanganiello90](https://github.com/amanganiello90)
 
-[npm-image]: https://img.shields.io/badge/npm-v8.10.0-green.svg
+[github-actions-image]: https://github.com/amanganiello90/generator-jhipster-electron/workflows/Build/badge.svg
+[github-actions-url]: https://github.com/amanganiello90/generator-jhipster-electron/actions
+[npm-image]: https://img.shields.io/npm/v/generator-jhipster-electron.svg
 [npm-url]: https://npmjs.org/package/generator-jhipster-electron
 [travis-image]: https://travis-ci.org/amanganiello90/generator-jhipster-electron.svg?branch=master
 [travis-url]: https://travis-ci.org/amanganiello90/generator-jhipster-electron

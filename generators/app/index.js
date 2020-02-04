@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 let directory = '';
-const dir = 'electron-war-package';
+const dir = 'electron-jar-package';
 
 module.exports = class extends BaseGenerator {
     get initializing() {
@@ -18,7 +18,7 @@ module.exports = class extends BaseGenerator {
                 }
             },
             readConfig() {
-                this.jhipsterAppConfig = this.getJhipsterAppConfig();
+                this.jhipsterAppConfig = this.getAllJhipsterConfig();
                 if (!this.jhipsterAppConfig) {
                     this.error('Can\'t read .yo-rc.json');
                 }
@@ -62,25 +62,19 @@ module.exports = class extends BaseGenerator {
     */
 
     writing() {
-        // function to use directly template
-        this.template = function (source, destination) {
-            this.fs.copyTpl(
-                this.templatePath(source),
-                this.destinationPath(destination),
-                this
-            );
-        };
 
         // read config from .yo-rc.json
+        /*
         this.baseName = this.jhipsterAppConfig.baseName;
         this.packageName = this.jhipsterAppConfig.packageName;
         this.packageFolder = this.jhipsterAppConfig.packageFolder;
         this.clientFramework = this.jhipsterAppConfig.clientFramework;
         this.clientPackageManager = this.jhipsterAppConfig.clientPackageManager;
         this.buildTool = this.jhipsterAppConfig.buildTool;
+        */
 
         // use function in generator-base.js from generator-jhipster
-        this.angularAppName = this.getAngularAppName();
+        // this.angularAppName = this.getAngularAppName();
 
         // use constants from generator-constants.js
         /*  const javaDir = `${jhipsterConstants.SERVER_MAIN_SRC_DIR + this.packageFolder}/`;
@@ -126,41 +120,19 @@ module.exports = class extends BaseGenerator {
         this.template('package.json', `${directory}/package.json`);
         this.template('README.md', `${directory}/README.md`);
 
-        /* if (this.clientFramework === 'angular1') {
-
-         }
-         if (this.clientFramework === 'angularX' || this.clientFramework === 'angular2') {
-
-         }
-
-
-        if (this.buildTool === 'maven') {
-
-        }
-        if (this.buildTool === 'gradle') {
-
-        }
-        */
     }
 
     install() {
-        let logMsg =
-            `To install your dependencies manually, run: ${chalk.yellow.bold(`${this.clientPackageManager} install`)}`;
+        const logMsg = `To install your dependencies manually, run: ${chalk.yellow.bold(`${this.clientPackageManager} install`)}`;
 
-        if (this.clientFramework === 'angular1') {
-            logMsg =
-                `To install your dependencies manually, run: ${chalk.yellow.bold(`${this.clientPackageManager} install & bower install`)}`;
-        }
-        const injectDependenciesAndConstants = (err) => {
+        const injectDependenciesAndConstants = err => {
             if (err) {
                 this.warning('Install of dependencies failed!');
                 this.log(logMsg);
-            } else if (this.clientFramework === 'angular1') {
-                this.spawnCommand('gulp', ['install']);
             }
         };
         const installConfig = {
-            bower: this.clientFramework === 'angular1',
+            bower: false,
             npm: this.clientPackageManager !== 'yarn',
             yarn: this.clientPackageManager === 'yarn',
             callback: injectDependenciesAndConstants
@@ -173,7 +145,7 @@ module.exports = class extends BaseGenerator {
     }
 
     end() {
-        this.log(`\nEnd of generation in ${chalk.yellow.bold(`${dir}`)} folder, now you can use this module after generating the target/*.war. View the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold('README.md')} :`);
+        this.log(`\nEnd of generation in ${chalk.yellow.bold(`${dir}`)} folder, now you can use this module after generating the target/*.jar. View the following instructions, to execute in that folder, into the generated ${chalk.yellow.bold('README.md')} :`);
         this.log(`1. To run the app in a live electron process, run: ${chalk.yellow.bold(`${this.clientPackageManager} start`)}`);
         this.log(`2. To package your app in an electron exe, run: ${chalk.yellow.bold(`${this.clientPackageManager} run package`)}`);
         this.log(`For both, when you open the electron window, you can view the backend log typing ${chalk.yellow.bold('F1 keyword')}`);

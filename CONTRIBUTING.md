@@ -185,7 +185,7 @@ In your cloned `generator-jhipster-electron` project, type `npm link` or `yarn l
 
 This will do a symbolic link from the global `node_modules` version to point to this folder, so when you run `yo jhipster-electron`, you will now use the development version of Electron for JHipster.
 
-For testing, you will want to generate an application, and there is a specific issue here: for each application, Electron for JHipster installs a local version of itself. This is made to enable several applications to each use a specific Electron for JHipster version (application A uses Electron for JHipster 3.1.0, and application B uses Electron for JHipster 3.2.0).
+For testing, you will want to generate an application, and there is a specific issue here: for each application, Electron for JHipster installs a local version of itself. This is made to enable several applications to each use a specific Electron for JHipster version (application A uses Electron for JHipster 6.1.0, and application B uses Electron for JHipster 6.2.0).
 
 To overcome this you need to run `npm link generator-jhipster-electron` or `yarn link generator-jhipster-electron` on the generated project folder as well, so that the local version has a symbolic link to the development version of JHipster.
 
@@ -259,10 +259,10 @@ automatically closing the issues referenced in your commit.
 For example, here is a good commit message:
 
 ```
-upgrade to JHipster 4.11.1
+upgrade to JHipster 6.6.0
 
-upgrade the required version of JHipster to be 4.11.1,
-see http://www.jhipster.tech/2017/11/26/jhipster-release-4.11.1.html
+upgrade the required version of JHipster to be 6.6.0,
+see https://www.jhipster.tech/2019/12/22/jhipster-release-6.6.0.html
 
 Fix #1234
 ```

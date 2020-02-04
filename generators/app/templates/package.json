@@ -1,6 +1,6 @@
 {
-	"name": "war-exe-generator",
-	"description": "Spawning Jhipster war app in Electron and using it to serve content or create a standalone package",
+	"name": "jar-exe-generator",
+	"description": "Spawning Jhipster jar app in Electron and using it to serve content or create a standalone package",
 	"version": "1.0.0",
 	"main": "main.js",
 	"author": {
@@ -9,14 +9,14 @@
 	},
 	"license": "Apache-2.0",
 	"scripts": {
-		"delete": "del \"*.war\"",
-		"copy": "cpx  \"../target/*.war\"  .",
-		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.war app.war ",
+		"delete": "del \"*.jar\"",
+		"copy": "cpx  \"../target/*.jar\"  .",
+		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.jar app.war ",
 		"start": "npm run preconfig && electron .",
 		"package": "npm run preconfig && build"
 	},
 	"build": {
-		"productName": "electron-war",
+		"productName": "electron-jar",
 		"asar": false,
 		"directories": {
 			"output": "distribution"
