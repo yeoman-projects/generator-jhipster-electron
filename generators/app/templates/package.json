@@ -13,7 +13,7 @@
 		"copy": "cpx  \"../target/*.jar\"  .",
 		"preconfig": "npm run copy && npm run delete && npm run copy && rename *.jar app.jar ",
 		"start": "npm run preconfig && electron .",
-		"package": "npm run preconfig && build"
+		"package": "npm run preconfig && electron-builder"
 	},
 	"build": {
 		"productName": "electron-jar",
@@ -22,19 +22,16 @@
 			"output": "distribution"
 		},
 		"win": {
-			"icon": "icon.png",
 			"target": [
 				"portable"
 			]
 		},
 		"mac": {
-			"icon": "icon.png",
 			"target": [
 				"dmg"
 			]
 		},
 		"linux": {
-			"icon": "icon.png",
 			"target": [
 				"AppImage"
 			]
@@ -48,9 +45,9 @@
 		"rename-cli": "5.1.2"
 	},
 	"dependencies": {
-		"jquery": "3.3.1",
+		"jquery": "3.4.1",
 		"keymaster": "1.6.2",
-		"lodash": "4.17.4",
-		"request": "2.83.0"
+		"lodash": "4.17.15",
+		"request": "2.88.0"
 	}
 }

@@ -39,7 +39,7 @@ jobs:
           jhipster --with-entities --no-insight
           yo jhipster-electron default --force
         working-directory: ./test/templates/${{ matrix.sample }}
-      - name: Run integration-tests
+      - name: Run jhipster integration-tests
         run: |
           if [ -f "mvnw" ]; then
               ./mvnw -ntp -P-webpack verify --batch-mode \
@@ -65,3 +65,7 @@ jobs:
                   -Dlogging.level.org.springframework.security=OFF
           fi
         working-directory: ./test/templates/${{ matrix.sample }}
+      - name: Run module integration-tests
+        run: |
+          npm run package
+        working-directory: ./test/templates/${{ matrix.sample }}/electron-jar-package

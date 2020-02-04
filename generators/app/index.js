@@ -118,7 +118,6 @@ module.exports = class extends BaseGenerator {
         }
         process.chdir(directory);
         this.template('electron.app.config.json', `${directory}/electron.app.config.json`);
-        this.template('icon.png', `${directory}/icon.png`);
         this.template('index.html', `${directory}/index.html`);
         this.template('main.js', `${directory}/main.js`);
         this.template('package.json', `${directory}/package.json`);

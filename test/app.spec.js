@@ -4,7 +4,7 @@ const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
 
 // const dir = 'electron-war-package/';
-const filesGenerated = ['electron.app.config.json', 'icon.png', 'index.html', 'main.js', 'package.json', 'README.md'];
+const filesGenerated = ['electron.app.config.json', 'index.html', 'main.js', 'package.json', 'README.md'];
 const messageTest = 'generation electron package folder with files';
 
 describe('JHipster generator electron', () => {
