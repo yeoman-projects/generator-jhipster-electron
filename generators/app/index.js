@@ -20,7 +20,7 @@ module.exports = class extends BaseGenerator {
             readConfig() {
                 this.jhipsterAppConfig = this.getAllJhipsterConfig();
                 if (!this.jhipsterAppConfig) {
-                    this.error('Cannot read .yo-rc.json');
+                    this.error(chalk.red.bold('Cannot read .yo-rc.json'));
                 }
             },
             displayLogo() {
@@ -114,7 +114,7 @@ module.exports = class extends BaseGenerator {
             directory = path.join(process.cwd(), dir);
             fs.mkdirSync(directory);
         } else {
-            throw new Error(`the folder: ${dir} already exists. Please delete before it!`);
+            this.error(chalk.red.bold(`The folder: ${dir} already exists. Please delete before it!`));
         }
         process.chdir(directory);
         this.template('electron.app.config.json', `${directory}/electron.app.config.json`);
